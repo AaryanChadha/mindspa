@@ -8,7 +8,7 @@ MindSpa offers a variety of audio sessions to promote relaxation, reduce stress,
 Setup
 Before running the program, follow these steps:
 
-Download Audio Files: Please download the required audio files from the Google Drive link. After downloading, ensure that the files remain unchanged in the 'mind audios' folder within your 'Downloads' directory. The file names should not be modified for the program to access them correctly. If needed, unzip the folder before running the program.
+Download Audio Files: Please download the required audio files from the Google Drive link: https://drive.google.com/drive/folders/1TZs1WfI4NE_36ik-bxp-2Ehfb8lUZhQ-?usp=sharing. After downloading, ensure that the files remain unchanged in the 'mind audios' folder within your 'Downloads' directory. The file names should not be modified for the program to access them correctly. If needed, unzip the folder before running the program.
 
 Install Required Python Packages: MindSpa relies on several Python packages - gTTS, pygame, and tkinter. To install these packages, open Command Prompt (Windows) or Terminal (Mac) and execute the following commands:
 
