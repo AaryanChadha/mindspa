@@ -1,4 +1,4 @@
-MindSpa - Mood-Enhancing Audio Player
+MindSpa - NutriBoom Audio
 Welcome to MindSpa, a scientifically curated audio player designed to help you relax, meditate, manage stress, improve sleep, enhance mood, focus while studying, and boost creativity. It will make you smarter, healthier and stronger using scientifically tailored graphs, medicinal recommendations, product recommendations and of course, our top of the line, AI generated, custom curated audio library designed to supercharge your mindfulness, studying, creativity and mood enhancement processes. This program allows you to create personalized meditation sessions to promote relaxation and well-being. Note: the use of advertisements is intentional to truly engage you in the NutriCore world!
 
 
