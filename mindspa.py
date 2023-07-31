@@ -15,7 +15,6 @@ import numpy as np
 import json
 import tempfile
 
-# setup
 username = getpass.getuser()
 os_type = platform.system()
 
@@ -135,7 +134,7 @@ class MindSpa:
                     raise Exception(f"Audio file {file} does not exist")
 
     def play(self):
-        ad_interval = self.duration / 5  # Ad will be played 5 times during the session
+        ad_interval = self.duration / 5 
         ad_count = 0
         while not self.stop_event.is_set():
             if not self.is_paused and not self.is_playing_ad:
