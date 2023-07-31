@@ -1,37 +1,38 @@
-# mindspa
- gui and code for v1 of nutriboom mindspa product (springdales hackathon 23)
- 
-Welcome to the MindSpa program!
 
-This program provides several options for mood-enhancing audio files, including meditation, stress management, sleep improvement, mood enhancement, study mode, and creativity boost. 
-The audio files will play for a duration you specify, with periodic advertisements.
+MindSpa
+Welcome to MindSpa - a mood-enhancing audio program developed for NutriBoom's MindSpa product (Springdales Hackathon 23).
 
-Before you run the program, please make sure to follow these steps:
+Overview
+MindSpa offers a variety of audio sessions to promote relaxation, reduce stress, improve sleep, enhance mood, boost creativity, and increase concentration. The program allows you to choose from different modes, including Meditation, Stress Management, Sleep Improvement, Mood Enhancement, Study Mode, and Creativity Boost. Each session can be customized with options such as Guided or Unguided meditation and focus areas like Relax, Sleep, or Concentrate. You can specify the duration of the session, and background music will play during the session to help you relax.
 
-1) DOWNLOAD THE AUDIO FILES:
-   Please download the necessary audio files from the following Google Drive link: 
-   https://drive.google.com/drive/folders/1TZs1WfI4NE_36ik-bxp-2Ehfb8lUZhQ-?usp=sharing
-   After downloading, please ensure that the files remain unchanged in the 'mind audios' folder and are in the 'Downloads' folder of your system.. The file names should remain unchanged for the program to find them. You may need to unzip the folder before the program can access it.
+Setup
+Before running the program, follow these steps:
 
-2) INSTALL THE REQUIRED PYTHON PACKAGES:
-   This program requires several Python packages to run. These include gTTS, pygame, and tkinter. To install these, you should open Command Prompt (Windows) or Terminal (Mac) and type in the following commands:
-   pip install gTTS
-    pip install pygame
-    If you receive an error, you may need to use 'pip3' instead of 'pip', or you might need to update pip itself.
+Download Audio Files: Please download the required audio files from the Google Drive link. After downloading, ensure that the files remain unchanged in the 'mind audios' folder within your 'Downloads' directory. The file names should not be modified for the program to access them correctly. If needed, unzip the folder before running the program.
 
-3) HOW TO CONTROL THE PROGRAM:
-    The program has a GUI with 4 buttons and a slider:
+Install Required Python Packages: MindSpa relies on several Python packages - gTTS, pygame, and tkinter. To install these packages, open Command Prompt (Windows) or Terminal (Mac) and execute the following commands:
 
-    - "START": Click this to start a session. You will be prompted to choose the mode, type (if Meditation mode is chosen), focus (if Meditation mode is chosen), and duration.
-    - "STOP": Click this to stop the session and exit the program.
-    - "PAUSE": Click this to pause the current session. The session can be resumed later.
-    - "RESUME": Click this to resume a paused session.
-    - "Volume": This is a slider that can be used to adjust the volume of the playback. Note: Adjusting the volume when no music is playing will result in an error message.
+Copy code
+pip install gTTS
+pip install pygame
+If you encounter any issues, try using 'pip3' instead of 'pip', or ensure that your pip installation is up-to-date.
 
-    Note: Every 20% of the session's duration, an advertisement will play. During the advertisement, the "PAUSE" and "RESUME" buttons will be disabled.
+How to Use
+The program provides a user-friendly GUI with the following controls:
 
-4) PERMISSIONS:
-    This program does not require any special permissions. However, it does need to be able to access the 'Downloads' folder of the user profile to find the audio files. 
-    If the program can't find the files, please ensure that they're in the right location and that the file names are correct.
+START: Click this button to initiate a session. You will be prompted to choose the mode, type (for Meditation mode), focus (for Meditation mode), and duration of the session.
 
-Happy relaxing!
+STOP: Click this button to terminate the current session and exit the program.
+
+PAUSE: Use this button to pause the ongoing session. You can resume the session later by clicking the "RESUME" button.
+
+RESUME: Click this button to continue a paused session.
+
+Volume Slider: Adjust the slider to control the playback volume. Note that adjusting the volume when no music is playing will display an error message.
+
+During each session, an advertisement will play at every 20% interval of the specified duration. The "PAUSE" and "RESUME" buttons will be disabled during the advertisement playback.
+
+Permissions
+MindSpa does not require any special permissions. However, it needs access to the 'Downloads' folder in your user profile to locate the audio files. If the program cannot find the files, ensure that they are in the correct location with the appropriate file names.
+
+Relax and enjoy the MindSpa experience!
