@@ -7,7 +7,9 @@ Before running the MindSpa program, please follow these setup instructions:
 
 Download the Audio Files:
 
-Download the necessary audio files from this Google Drive link: MindSpa Audio Files
+Download the necessary audio files from this Google Drive link: 
+https://drive.google.com/drive/folders/1TZs1WfI4NE_36ik-bxp-2Ehfb8lUZhQ-?usp=drive_link
+
 Make sure the audio files are placed in the 'Downloads' folder of your system, and they should remain unchanged in the 'mind audios' folder. If needed, unzip the downloaded folder.
 Install Required Python Packages:
 
