@@ -6,6 +6,7 @@ import threading
 import tkinter as tk
 from tkinter import messagebox, simpledialog
 from gtts import gTTS
+import io
 from pygame import mixer
 import signal
 import matplotlib.pyplot as plt
@@ -52,9 +53,9 @@ class MindSpa:
         self.root = tk.Tk()
         self.start_button = tk.Button(self.root, text="START", command=self.start_thread)
         self.stop_button = tk.Button(self.root, text="STOP", command=self.stop)
-        self.pause_button = tk.Button(self.root, text="PAUSE", command=self.pause)
-        self.resume_button = tk.Button(self.root, text="RESUME", command=self.resume)
-        self.graph_button = tk.Button(self.root, text="GRAPHS", command=self.show_graphs)
+        self.pause_button = tk.Button(self.root, text="PAUSE", command=self.pause, state=tk.DISABLED)
+        self.resume_button = tk.Button(self.root, text="RESUME", command=self.resume, state=tk.DISABLED)
+        self.graph_button = tk.Button(self.root, text="GRAPHS", command=self.show_graphs, state=tk.DISABLED)
         self.volume_scale = tk.Scale(self.root, from_=0, to=1, resolution=0.01, orient=tk.HORIZONTAL, command=self.adjust_volume, label="Volume")
         self.start_button.pack()
         self.stop_button.pack()
@@ -72,10 +73,10 @@ class MindSpa:
         self.attention_data = []
         self.current_attention_score = 100
         self.load_session_data()
-        mixer.init()
-        self.volume_scale.set(mixer.music.get_volume())
         self.verify_files(audio_files)
         signal.signal(signal.SIGINT, self.stop)
+        mixer.init()
+        self.volume_scale.set(mixer.music.get_volume())
         self.root.mainloop()
 
     def start_thread(self):
@@ -139,10 +140,14 @@ class MindSpa:
         while not self.stop_event.is_set():
             if not self.is_paused and not self.is_playing_ad:
                 if time.time() - self.start_time >= ad_interval:
+                    self.pause_button.config(state=tk.DISABLED)
+                    self.resume_button.config(state=tk.DISABLED)
                     self.play_ad()
                     ad_count += 1
                     if ad_count == 5:
                         break
+                    self.pause_button.config(state=tk.NORMAL)
+                    self.resume_button.config(state=tk.NORMAL)
                     self.start_time = time.time() 
                     continue
                 if not mixer.music.get_busy():
@@ -153,16 +158,16 @@ class MindSpa:
     def play_ad(self):
         self.is_playing_ad = True
         tts = gTTS(ad_text)
-        fd, tmp_file = tempfile.mkstemp(suffix=".mp3")
+        tmp_file = io.BytesIO()
         try:
-            tts.save(tmp_file)
+            tts.write_to_fp(tmp_file)
+            tmp_file.seek(0)
             sound = mixer.Sound(tmp_file)
             sound.play()
             while mixer.get_busy() and not self.stop_event.is_set():
                 time.sleep(1)
         finally:
-            os.close(fd)
-            os.remove(tmp_file)
+            tmp_file.close()
         self.is_playing_ad = False
         mixer.music.load(self.audio_file)
 
@@ -194,6 +199,10 @@ class MindSpa:
         return int(simpledialog.askstring("Input", "Enter Duration in Minutes", parent=self.root))
 
     def show_graphs(self):
+        if len(self.session_data['session_durations']) < 2:
+            messagebox.showinfo("Error", "Please run at least 2 complete sessions to access graphs.")
+            return
+
         fig, ax = plt.subplots(2)
         ax[0].plot(range(len(self.session_data['session_durations'])), self.session_data['session_durations'])
         ax[0].set_title('Session Durations')
