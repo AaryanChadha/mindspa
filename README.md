@@ -11,7 +11,7 @@ Before you run the program, please make sure to follow these steps:
 1) DOWNLOAD THE AUDIO FILES:
    Please download the necessary audio files from the following Google Drive link: 
    https://drive.google.com/drive/folders/1TZs1WfI4NE_36ik-bxp-2Ehfb8lUZhQ-?usp=sharing
-   After downloading, please ensure that the files are placed into a new folder named 'mind audios' in the 'Downloads' folder of the user profile. The file names should remain unchanged for the program to find them.
+   After downloading, please ensure that the files remain unchanged in the 'mind audios' folder and are in the 'Downloads' folder of your system.. The file names should remain unchanged for the program to find them. You may need to unzip the folder before the program can access it.
 
 2) INSTALL THE REQUIRED PYTHON PACKAGES:
    This program requires several Python packages to run. These include gTTS, pygame, and tkinter. To install these, you should open Command Prompt (Windows) or Terminal (Mac) and type in the following commands:
